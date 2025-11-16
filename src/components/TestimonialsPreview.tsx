@@ -68,7 +68,7 @@ export default function TestimonialsPreview() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id || index}
@@ -76,7 +76,7 @@ export default function TestimonialsPreview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="bg-gray-900 rounded-2xl border border-gray-700 p-6 sm:p-8 hover:border-gray-600 transition-colors"
+                className="bg-gray-900 rounded-2xl border border-gray-700 p-6 sm:p-8 hover:border-gray-600 transition-colors w-full md:w-[calc(50%-0.75rem)] md:max-w-[500px]"
               >
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
