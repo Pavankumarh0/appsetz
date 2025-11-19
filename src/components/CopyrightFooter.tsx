@@ -19,12 +19,12 @@ export default function CopyrightFooter() {
             <div className="flex items-center space-x-3 mb-4 sm:mb-0">
               <Image
                 src="/assets/appkraft_logo-removebg-preview.png"
-                alt="AppSetz Logo"
+                alt="appsetz Logo"
                 width={32}
                 height={32}
                 className="w-8 h-8 object-contain"
               />
-              <span className="text-xl font-bold">AppSetz</span>
+              <span className="text-xl font-bold">appsetz</span>
             </div>
             
             {/* Follow Us Section */}
@@ -73,7 +73,7 @@ export default function CopyrightFooter() {
           {/* Copyright and tagline centered */}
           <div className="text-center">
             <p className="text-gray-400 text-sm mb-4">
-              © 2024 AppSetz. All rights reserved.
+              © 2024 appsetz. All rights reserved.
             </p>
             
             <p className="text-gray-500 text-xs">

@@ -387,7 +387,7 @@ export default function AdminPage() {
           <div className="flex items-center space-x-3 sm:space-x-4">
             <Image
               src="/assets/appkraft_logo-removebg-preview.png"
-              alt="AppSetz Logo"
+              alt="appsetz Logo"
               width={32}
               height={32}
               className="w-6 h-6 sm:w-8 sm:h-8 object-contain"

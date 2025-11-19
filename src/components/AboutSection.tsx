@@ -26,7 +26,7 @@ export default function AboutSection() {
             WHY US
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            At AppSetz, we are a team of passionate and experienced app developers and software engineers driven by a shared mission: to empower businesses with innovative technology solutions.
+            At appsetz, we are a team of passionate and experienced app developers and software engineers driven by a shared mission: to empower businesses with innovative technology solutions.
           </p>
         </motion.div>
 

@@ -67,6 +67,10 @@ export default function PricingSection() {
     window.location.href = '/contact';
   };
 
+  const handleStartProject = () => {
+    window.location.href = 'https://cal.com/reachpavankumar-txgih5';
+  };
+
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
       <div className="max-w-6xl mx-auto">
@@ -130,6 +134,7 @@ export default function PricingSection() {
               </ul>
 
               <button
+                onClick={handleStartProject}
                 className={`w-full py-3 rounded-lg font-medium transition-colors ${
                   plan.popular
                     ? 'bg-white hover:bg-gray-100 text-black'
