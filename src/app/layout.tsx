@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Appsetz Team', url: siteUrl }],
   creator: 'Appsetz',
-  publisher: 'Appsetz',
+  publisher: 'Appsetz Agency',
   formatDetection: {
     email: false,
     address: false,
