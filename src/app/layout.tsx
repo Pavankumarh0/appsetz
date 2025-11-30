@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: 'Appsetz',
     title: 'Appsetz — Transforming Ideas into Powerful Digital Products',
-    description: 'Full-stack digital product agency helping startups build modern, scalable websites, mobile apps, and SaaS products. We design and develop custom solutions tailored to your business goals.',
+    description: 'Full-stack digital product agency helping startups build modern, scalable websites, mobile apps, and SaaS products. We design and develop custom solutions tailored to your business goals and Your idea.',
     images: [
       {
         url: logoPath,
