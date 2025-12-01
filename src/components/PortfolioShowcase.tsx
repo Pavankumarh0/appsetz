@@ -9,12 +9,12 @@ import ImgStack from '@/components/ImgStack';
 export default function PortfolioShowcase() {
   const router = useRouter();
   
-  // Images for the card stack (5:7 aspect ratio - portrait orientation)
+  // Images for the card stack
   const stackImages = [
-    '/assets/WhatsApp Image 2025-11-29 at 20.41.50_64d54dfd.jpg',
-    '/assets/WhatsApp Image 2025-11-29 at 20.41.50_814070c6.jpg',
-    '/assets/WhatsApp Image 2025-11-29 at 20.41.50_eab15ece.jpg',
-    '/assets/WhatsApp Image 2025-11-29 at 20.41.51_dbea23de.jpg'
+    '/assets/project-images/IMG-20251129-WA0025.jpg',
+    '/assets/project-images/IMG-20251129-WA0026.jpg',
+    '/assets/project-images/IMG-20251129-WA0027.jpg',
+    '/assets/project-images/IMG-20251129-WA0028.jpg'
   ];
 
   const projectLabels = [
