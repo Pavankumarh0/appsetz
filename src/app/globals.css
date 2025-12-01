@@ -8,6 +8,7 @@
   --foreground-rgb: 255, 255, 255;
   --background-rgb: 0, 0, 0;
   --accent-rgb: 59, 130, 246;
+  --background: #000000;
 }
 
 body {
@@ -37,4 +38,14 @@ body {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
+import PortfolioShowcase from '@/components/PortfolioShowcase';
 import TestimonialsPreview from '@/components/TestimonialsPreview';
 import ServicesSection from '@/components/ServicesSection';
 import ProcessSection from '@/components/ProcessSection';
@@ -30,6 +31,7 @@ export default function Home() {
         <Header />
         <main>
           <HeroSection />
+          <PortfolioShowcase />
           <TestimonialsPreview />
           <ServicesSection />
           <ProcessSection />

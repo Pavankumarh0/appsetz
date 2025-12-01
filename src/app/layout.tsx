@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Appsetz Team', url: siteUrl }],
   creator: 'Appsetz',
-  publisher: 'Appsetz Agency',
+  publisher: 'Appsetz',
   formatDetection: {
     email: false,
     address: false,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: 'Appsetz',
     title: 'Appsetz — Transforming Ideas into Powerful Digital Products',
-    description: 'Full-stack digital product agency helping startups build modern, scalable websites, mobile apps, and SaaS products. We design and develop custom solutions tailored to your business goals and Your idea.',
+    description: 'Full-stack digital product agency helping startups build modern, scalable websites, mobile apps, and SaaS products. We design and develop custom solutions tailored to your business goals.',
     images: [
       {
         url: logoPath,

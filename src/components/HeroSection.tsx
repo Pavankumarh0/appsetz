@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { XCircle } from 'lucide-react';
-import { DottedSurface } from '@/components/DottedSurface';
+import { ArrowRight } from 'lucide-react';
+import { BGPattern } from '@/components/BGPattern';
 
 export default function HeroSection() {
   const scrollToContact = () => {
@@ -14,26 +14,19 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="pt-32 pb-20 bg-white relative overflow-hidden">
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-33.333%);
-            }
-          }
-        `
-      }} />
-      <div className="absolute inset-0 z-0">
-        <DottedSurface />
-      </div>
+    <section id="hero" className="pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 bg-black relative overflow-hidden">
+      {/* Background Pattern */}
+      <BGPattern 
+        variant="grid" 
+        mask="fade-edges" 
+        size={40} 
+        fill="rgba(255,255,255,0.08)"
+        className="z-0"
+      />
 
       <div className="relative z-10 w-full">
-        {/* Text Content - Left Aligned */}
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Text Content */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
@@ -43,95 +36,50 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.0, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-black mb-8 leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-extrabold text-white mb-4 sm:mb-6 lg:mb-8 leading-[1.1]"
             >
-            <div className="inline-block">
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.0, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                className="block"
               >
-                Launch your app{' '}
+                Launch your app
               </motion.span>
               <HeadlinePhases />
-            </div>
-          </motion.h1>
+            </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="text-xl text-gray-700 mb-12 max-w-3xl"
-          >
-            For Startups & SMEs. Business-results oriented and AI-powered 🚀
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.0, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-6 sm:mb-8 lg:mb-12 max-w-xl"
+            >
+              For Startups & SMEs. Business-results oriented and AI-powered 🚀
+            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.0, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col sm:flex-row gap-4 items-center mb-16"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-md sm:max-w-none"
             >
               <button
                 onClick={scrollToContact}
-                className="bg-gray-900 hover:bg-black text-white font-medium px-8 py-4 rounded-lg transition-colors duration-200 shadow-lg"
+                className="w-full sm:w-auto bg-white hover:bg-gray-100 text-black font-semibold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl transition-colors duration-200 shadow-lg text-center text-sm sm:text-base"
               >
                 Get a quote
               </button>
               <button
                 onClick={goToProjects}
-                className="border-2 border-gray-800 hover:bg-gray-900 hover:text-white text-gray-900 font-medium px-8 py-4 rounded-lg transition-colors duration-200"
+                className="w-full sm:w-auto border-2 border-gray-600 hover:border-white hover:bg-white hover:text-black text-white font-semibold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base"
               >
                 View portfolio
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Featured Project Images - In Container */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.0, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="w-full mt-12"
-        >
-          <div className="relative overflow-hidden w-full bg-gray-50 border-t-2 border-b-2 border-gray-200 shadow-lg py-6 sm:py-8">
-            <div 
-              className="flex items-center gap-4 sm:gap-6 lg:gap-8"
-              style={{
-                animation: 'scroll 7.5s linear infinite',
-                willChange: 'transform',
-              }}
-            >
-              {(() => {
-                const images = [
-                  '/assets/decoder-landingpage.png',
-                  '/assets/oxyverse-landing.png',
-                  '/assets/landing.png',
-                  '/assets/WhatsApp%20Image%202025-11-19%20at%2014.29.07_bbc06484.jpg'
-                ];
-                // Triple the images for truly seamless infinite scrolling
-                return [...images, ...images, ...images].map((src, idx) => (
-                <div 
-                  key={idx}
-                  className="relative flex-shrink-0"
-                >
-                  <div 
-                    className="relative overflow-hidden rounded-2xl border-2 border-gray-300 bg-white shadow-xl w-[280px] h-[175px] sm:w-[400px] sm:h-[250px] md:w-[500px] md:h-[310px] lg:w-[660px] lg:h-[410px]"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                      src={src} 
-                      alt="Featured project" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                ));
-              })()}
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
@@ -142,10 +90,6 @@ type Phase = 'initial' | 'markWrong' | 'final';
 function HeadlinePhases() {
   const [phase, setPhase] = useState<Phase>('initial');
 
-  // Timeline (premium slow pacing):
-  // 0.0s – 1.6s  : initial sentence (Months not Days)
-  // 1.6s – 3.2s  : line-draw strike + red X "stamp"
-  // 3.2s+        : final sentence (Days not Months)
   useEffect(() => {
     const t1 = setTimeout(() => setPhase('markWrong'), 1600);
     const t2 = setTimeout(() => setPhase('final'), 3200);
@@ -159,27 +103,31 @@ function HeadlinePhases() {
     return (
       <>
         <AnimatedLine delay={0.45}>
-          in{' '}
-          <motion.span
-            className="text-blue-600"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Months
-          </motion.span>
+          <span className="block">
+            In{' '}
+            <motion.span
+              className="text-blue-500"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.0, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              Months
+            </motion.span>
+            , Not
+          </span>
         </AnimatedLine>
-        <br />
         <AnimatedLine delay={0.65}>
-          not{' '}
-          <motion.span
-            className="text-gray-600"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Days
-          </motion.span>
+          <span className="block">
+            <motion.span
+              className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.0, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            >
+              Days
+            </motion.span>
+            .
+          </span>
         </AnimatedLine>
       </>
     );
@@ -189,13 +137,17 @@ function HeadlinePhases() {
     return (
       <>
         <AnimatedLine delay={0.0}>
-          in{' '}
-          <WrongWord word="Months" />
+          <span className="block">
+            In{' '}
+            <WrongWord word="Months" color="text-blue-500" />
+            , Not
+          </span>
         </AnimatedLine>
-        <br />
         <AnimatedLine delay={0.18}>
-          not{' '}
-          <WrongWord word="Days" />
+          <span className="block">
+            <WrongWord word="Days" color="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent" />
+            .
+          </span>
         </AnimatedLine>
       </>
     );
@@ -205,56 +157,56 @@ function HeadlinePhases() {
   return (
     <>
       <AnimatedLine delay={0.0}>
-        in{' '}
-        <motion.span
-          className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent"
-          initial={{ scale: 0.92, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{
-            type: 'spring',
-            stiffness: 140,
-            damping: 18,
-            delay: 0.15,
-          }}
-          whileHover={{ scale: 1.06, transition: { duration: 0.18 } }}
-        >
-          Days
-        </motion.span>
-        ,
-      </AnimatedLine>
-      <br />
-      <AnimatedLine delay={0.18}>
-        not{' '}
-        <span className="relative inline-block">
+        <span className="block">
+          In{' '}
           <motion.span
-            className="text-gray-600"
-            initial={{ scale: 0.94, opacity: 0 }}
+            className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent"
+            initial={{ scale: 0.92, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{
               type: 'spring',
               stiffness: 140,
               damping: 18,
-              delay: 0.35,
+              delay: 0.15,
             }}
-            whileHover={{ scale: 1.04, transition: { duration: 0.18 } }}
           >
-            Months
+            Days
           </motion.span>
-          {/* Red strike-through line */}
-          <motion.span
-            aria-hidden="true"
-            className="absolute left-0 top-1/2 -translate-y-1/2 h-[3px] bg-red-500 rounded"
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: '100%', opacity: 1 }}
-            transition={{
-              duration: 0.7,
-              delay: 0.5,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            style={{ transformOrigin: 'left center' }}
-          />
+          , Not
         </span>
-        .
+      </AnimatedLine>
+      <AnimatedLine delay={0.18}>
+        <span className="block relative inline-block">
+          <span className="relative">
+            <motion.span
+              className="text-blue-500"
+              initial={{ scale: 0.94, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                type: 'spring',
+                stiffness: 140,
+                damping: 18,
+                delay: 0.35,
+              }}
+            >
+              Months
+            </motion.span>
+            {/* Red strike-through line */}
+            <motion.span
+              aria-hidden="true"
+              className="absolute left-0 top-1/2 -translate-y-1/2 h-[3px] sm:h-[4px] bg-red-500 rounded-full"
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: '100%', opacity: 1 }}
+              transition={{
+                duration: 0.7,
+                delay: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              style={{ transformOrigin: 'left center' }}
+            />
+          </span>
+          .
+        </span>
       </AnimatedLine>
     </>
   );
@@ -274,53 +226,29 @@ function AnimatedLine({
       initial={{ opacity: 0, y: 26 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.0, delay, ease: [0.22, 1, 0.36, 1] }}
-      className="inline-block"
     >
       {children}
     </motion.span>
   );
 }
 
-function WrongWord({ word }: { word: string }) {
+function WrongWord({ word, color }: { word: string; color: string }) {
   return (
-    <span className="relative inline-flex items-center gap-2">
-      {/* Word with animated red strike-through line */}
-      <span className="relative inline-block">
-        <span className="text-blue-600">{word}</span>
-        {/* Line-draw strike: starts at width 0, grows to 100% */}
-        <motion.span
-          aria-hidden="true"
-          className="absolute left-0 top-1/2 -translate-y-1/2 h-[3px] bg-red-500 rounded"
-          initial={{ width: 0, opacity: 0 }}
-          animate={{ width: '100%', opacity: 1 }}
-          transition={{
-            duration: 0.7,
-            delay: 0.25,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          style={{ transformOrigin: 'left center' }}
-        />
-      </span>
-
-      {/* Red X with "stamp" effect */}
+    <span className="relative inline-block">
+      <span className={color}>{word}</span>
+      {/* Strike-through line */}
       <motion.span
-        initial={{ scale: 0.7, rotate: -12, opacity: 0 }}
-        animate={{
-          scale: [0.7, 1.06, 0.98, 1.0],
-          rotate: [-12, 3, -1, 0],
-          opacity: [0, 1, 1, 1],
-        }}
+        aria-hidden="true"
+        className="absolute left-0 top-1/2 -translate-y-1/2 h-[2px] sm:h-[3px] bg-red-500 rounded"
+        initial={{ width: 0, opacity: 0 }}
+        animate={{ width: '100%', opacity: 1 }}
         transition={{
-          duration: 0.75,
-          times: [0, 0.45, 0.75, 1],
-          ease: [0.16, 1, 0.3, 1], // "thud" feel
-          delay: 0.35,
+          duration: 0.7,
+          delay: 0.25,
+          ease: [0.22, 1, 0.36, 1],
         }}
-        className="inline-block"
-        aria-label={`${word} marked wrong`}
-      >
-        <XCircle className="w-8 h-8 text-red-500" />
-      </motion.span>
+        style={{ transformOrigin: 'left center' }}
+      />
     </span>
   );
 }
