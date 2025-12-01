@@ -207,7 +207,7 @@ function HeadlinePhases() {
       <AnimatedLine delay={0.0}>
         in{' '}
         <motion.span
-          className="text-blue-600"
+          className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent"
           initial={{ scale: 0.92, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{
