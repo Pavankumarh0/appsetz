@@ -61,7 +61,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-black">
       <Header />
-      
+
       <main className="pt-20">
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
           <div className="max-w-6xl mx-auto">
@@ -88,7 +88,7 @@ export default function ContactPage() {
                 className="bg-black rounded-lg p-8 border border-gray-700"
               >
                 <h2 className="text-2xl font-semibold text-white mb-6">Send us a message</h2>
-                
+
                 {isSuccess && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
@@ -106,7 +106,7 @@ export default function ContactPage() {
                     </div>
                   </motion.div>
                 )}
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <input
@@ -154,11 +154,10 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting || isSuccess}
-                    className={`w-full font-medium py-3 rounded-lg transition-colors duration-200 disabled:opacity-50 ${
-                      isSuccess 
-                        ? 'bg-green-500 text-white cursor-not-allowed' 
+                    className={`w-full font-medium py-3 rounded-lg transition-colors duration-200 disabled:opacity-50 ${isSuccess
+                        ? 'bg-green-500 text-white cursor-not-allowed'
                         : 'bg-white hover:bg-gray-100 text-black'
-                    }`}
+                      }`}
                   >
                     {isSubmitting ? 'Sending to Firestore...' : isSuccess ? '✓ Message Sent!' : 'Send Message'}
                   </button>
@@ -184,17 +183,17 @@ export default function ContactPage() {
                         <p className="text-gray-300">+91 7676729328</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
                         <Mail className="w-6 h-6 text-black" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-white mb-1">Email us</h3>
-                        <p className="text-gray-300">info.appsetz@gmail.com</p>
+                        <p className="text-gray-300">info@appsetz.work</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start space-x-4">
                       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
                         <MapPin className="w-6 h-6 text-black" />
@@ -212,7 +211,7 @@ export default function ContactPage() {
                   <p className="text-gray-300 mb-6">
                     Ready to transform your app idea into reality? Book a free consultation with our experts and let's discuss how we can help bring your vision to life.
                   </p>
-                  
+
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center space-x-3">
                       <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
@@ -233,7 +232,7 @@ export default function ContactPage() {
                       <span className="text-gray-300">Receive a tailored development plan</span>
                     </div>
                   </div>
-                  
+
                   <div className="bg-gray-800 rounded-lg p-4">
                     <h4 className="font-semibold text-white mb-2">Quick Response Guarantee</h4>
                     <p className="text-gray-300 text-sm">
@@ -246,7 +245,7 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-      
+
       <CopyrightFooter />
     </div>
   );

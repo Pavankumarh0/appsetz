@@ -16,17 +16,16 @@ export default function CopyrightFooter() {
         >
           {/* Top row: Logo left, Follow Us right */}
           <div className="flex flex-col sm:flex-row items-center justify-between mb-6">
-            <div className="flex items-center space-x-3 mb-4 sm:mb-0">
+            <div className="flex items-center space-x-3 mb-4 sm:mb-0 text-white">
               <Image
-                src="/assets/appkraft_logo-removebg-preview.png"
-                alt="appsetz Logo"
-                width={32}
-                height={32}
-                className="w-8 h-8 object-contain"
+                src="/assets/project-images/1000205142.png"
+                alt="AppSetz Logo"
+                width={240}
+                height={80}
+                className="h-24 w-auto object-contain brightness-0 invert"
               />
-              <span className="text-xl font-bold">appsetz</span>
             </div>
-            
+
             {/* Follow Us Section */}
             <div>
               <h3 className="text-sm font-medium text-gray-300 mb-3 text-center sm:text-right">Follow Us</h3>
@@ -42,7 +41,7 @@ export default function CopyrightFooter() {
                 >
                   <Twitter className="w-6 h-6" />
                 </motion.a>
-                
+
                 <motion.a
                   href="https://www.instagram.com/appsetz?igsh=eDF5MHB2OXFraGd1"
                   target="_blank"
@@ -54,7 +53,7 @@ export default function CopyrightFooter() {
                 >
                   <Instagram className="w-6 h-6" />
                 </motion.a>
-                
+
                 <motion.a
                   href="https://www.linkedin.com/company/appsetz/"
                   target="_blank"
@@ -69,13 +68,13 @@ export default function CopyrightFooter() {
               </div>
             </div>
           </div>
-          
+
           {/* Copyright and tagline centered */}
           <div className="text-center">
             <p className="text-gray-400 text-sm mb-4">
               © 2024 appsetz. All rights reserved.
             </p>
-            
+
             <p className="text-gray-500 text-xs">
               Professional Flutter Development Services
             </p>

@@ -48,16 +48,16 @@ export default function HeroSection() {
                 Launch your app
               </motion.span>
               <HeadlinePhases />
-            </motion.h1>
+          </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.0, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 mb-6 sm:mb-8 lg:mb-12 max-w-xl"
-            >
-              For Startups & SMEs. Business-results oriented and AI-powered 🚀
-            </motion.p>
+          >
+            For Startups & SMEs. Business-results oriented and AI-powered 🚀
+          </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -106,27 +106,27 @@ function HeadlinePhases() {
         <AnimatedLine delay={0.45}>
           <span className="block">
             In{' '}
-            <motion.span
+          <motion.span
               className="text-blue-500"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.0, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            >
-              Months
-            </motion.span>
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Months
+          </motion.span>
             , Not
           </span>
         </AnimatedLine>
         <AnimatedLine delay={0.65}>
           <span className="block">
-            <motion.span
+          <motion.span
               className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.0, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            >
-              Days
-            </motion.span>
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.0, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Days
+          </motion.span>
             .
           </span>
         </AnimatedLine>
@@ -160,53 +160,53 @@ function HeadlinePhases() {
       <AnimatedLine delay={0.0}>
         <span className="block">
           In{' '}
-          <motion.span
+        <motion.span
             className="bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 bg-clip-text text-transparent"
-            initial={{ scale: 0.92, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              type: 'spring',
-              stiffness: 140,
-              damping: 18,
-              delay: 0.15,
-            }}
-          >
-            Days
-          </motion.span>
+          initial={{ scale: 0.92, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 140,
+            damping: 18,
+            delay: 0.15,
+          }}
+        >
+          Days
+        </motion.span>
           , Not
         </span>
       </AnimatedLine>
       <AnimatedLine delay={0.18}>
         <span className="block relative inline-block">
           <span className="relative">
-            <motion.span
+          <motion.span
               className="text-blue-500"
-              initial={{ scale: 0.94, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{
-                type: 'spring',
-                stiffness: 140,
-                damping: 18,
-                delay: 0.35,
-              }}
-            >
-              Months
-            </motion.span>
-            {/* Red strike-through line */}
-            <motion.span
-              aria-hidden="true"
+            initial={{ scale: 0.94, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              type: 'spring',
+              stiffness: 140,
+              damping: 18,
+              delay: 0.35,
+            }}
+          >
+            Months
+          </motion.span>
+          {/* Red strike-through line */}
+          <motion.span
+            aria-hidden="true"
               className="absolute left-0 top-1/2 -translate-y-1/2 h-[3px] sm:h-[4px] bg-red-500 rounded-full"
-              initial={{ width: 0, opacity: 0 }}
-              animate={{ width: '100%', opacity: 1 }}
-              transition={{
-                duration: 0.7,
-                delay: 0.5,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              style={{ transformOrigin: 'left center' }}
-            />
-          </span>
-          .
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: '100%', opacity: 1 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.5,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            style={{ transformOrigin: 'left center' }}
+          />
+        </span>
+        .
         </span>
       </AnimatedLine>
     </>
@@ -235,21 +235,21 @@ function AnimatedLine({
 
 function WrongWord({ word, color }: { word: string; color: string }) {
   return (
-    <span className="relative inline-block">
+      <span className="relative inline-block">
       <span className={color}>{word}</span>
       {/* Strike-through line */}
-      <motion.span
-        aria-hidden="true"
+        <motion.span
+          aria-hidden="true"
         className="absolute left-0 top-1/2 -translate-y-1/2 h-[2px] sm:h-[3px] bg-red-500 rounded"
-        initial={{ width: 0, opacity: 0 }}
-        animate={{ width: '100%', opacity: 1 }}
-        transition={{
-          duration: 0.7,
-          delay: 0.25,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-        style={{ transformOrigin: 'left center' }}
-      />
+          initial={{ width: 0, opacity: 0 }}
+          animate={{ width: '100%', opacity: 1 }}
+          transition={{
+            duration: 0.7,
+            delay: 0.25,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          style={{ transformOrigin: 'left center' }}
+        />
     </span>
   );
 }

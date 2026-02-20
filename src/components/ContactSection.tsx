@@ -156,7 +156,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium text-white">Email us</h4>
-                    <p className="text-gray-300">info.appsetz@gmail.com</p>
+                    <p className="text-gray-300">info@appsetz.work</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">

@@ -1,0 +1,44 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if required fields are present and valid strings
+    function isValidContactMessage() {
+      let incomingData = request.resource.data;
+      
+      // Required: email and timestamp
+      let hasRequired = incomingData.get('email', '') is string && 
+                        incomingData.email.size() > 0 && 
+                        incomingData.email.matches('^[^@]+@[^@]+\\.[a-zA-Z]{2,}$') &&
+                        incomingData.get('submittedAt', null) is timestamp;
+
+      // Name validation: either 'name' OR ('firstName' + 'lastName')
+      let hasName = (incomingData.get('name', '') is string && incomingData.name.size() > 0) ||
+                    (incomingData.get('firstName', '') is string && incomingData.get('lastName', '') is string);
+
+      // Optional fields validation
+      let phoneValid = incomingData.get('phone', '') is string;
+      let messageValid = incomingData.get('message', '') is string;
+      let serviceValid = incomingData.get('service', '') is string;
+      let sourceValid = incomingData.get('source', '') is string;
+      let descriptionValid = incomingData.get('description', '') is string;
+      
+      return hasRequired && hasName && phoneValid && messageValid && serviceValid && sourceValid && descriptionValid;
+    }
+
+    match /contact_messages/{messageId} {
+      allow read: if true;
+      allow create: if isValidContactMessage();
+      allow update, delete: if false;
+    }
+
+    match /messages/{messageId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /projects/{projectId} {
+      allow read: if true;
+      allow write: if false; 
+    }
+  }
+}

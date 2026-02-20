@@ -1,0 +1,82 @@
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.curved-loop-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0 0 0;
+    background: #fff;
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .curved-loop-container {
+        padding: 40px 0 0 0;
+    }
+}
+
+.curved-loop-header {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.curved-loop-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #000;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.curved-loop-description {
+    font-size: 1.25rem;
+    color: #666;
+    max-width: 600px;
+    white-space: normal;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.curved-loop-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.curved-loop-svg text {
+    fill: #000;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+    .curved-loop-title {
+        font-size: 2.25rem;
+    }
+
+    .curved-loop-description {
+        font-size: 1.125rem;
+        padding: 0 10px;
+    }
+
+    .curved-loop-svg text {
+        font-size: 8rem;
+    }
+}
