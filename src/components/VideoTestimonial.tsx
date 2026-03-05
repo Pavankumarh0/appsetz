@@ -60,7 +60,7 @@ const VideoTestimonial = () => {
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black group">
                             <video
                                 ref={videoRef}
-                                src="/video-testimonial/dr Sirisha.mp4"
+                                src="https://github.com/Pavankumarh0/appsetz/raw/main/public/video-testimonial/dr%20Sirisha.mp4"
                                 className="w-full object-contain rounded-2xl"
                                 muted
                                 autoPlay
