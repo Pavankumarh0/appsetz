@@ -12,6 +12,7 @@ import WhyUs from '@/components/WhyUs';
 import Pricing from '@/components/Pricing';
 import ContactClean from '@/components/ContactClean';
 import CopyrightFooter from '@/components/CopyrightFooter';
+import VideoTestimonial from '@/components/VideoTestimonial';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -29,6 +30,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <VideoTestimonial />
         <CurvedLoop
           marqueeText="Discovery ✦ Design ✦ Development ✦ Testing ✦ Deployment ✦"
           title="How Appsetz Delivers Projects"
