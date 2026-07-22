@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import PlansSection from '@/components/PlansSection';
 import CurvedLoop from '@/components/CurvedLoop';
 import Portfolio from '@/components/Portfolio';
 import Testimonials from '@/components/Testimonials';
@@ -30,6 +31,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <PlansSection />
         <VideoTestimonial />
         <CurvedLoop
           marqueeText="Discovery ✦ Design ✦ Development ✦ Testing ✦ Deployment ✦"
