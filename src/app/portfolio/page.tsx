@@ -194,7 +194,7 @@ export default function PortfolioPage() {
                                         Let&apos;s collaborate to bring your vision to life with cutting-edge technology and exceptional design.
                                     </p>
                                     <motion.button
-                                        onClick={() => window.location.href = 'https://cal.com/reachpavankumar-txgih5'}
+                                        onClick={() => window.location.href = 'https://www.waytolink.cc/book/pavankumar'}
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         className="bg-black hover:bg-gray-800 text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"

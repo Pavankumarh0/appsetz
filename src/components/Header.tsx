@@ -121,7 +121,7 @@ export default function Header() {
 
           {/* CTA Button */}
           <button
-            onClick={() => { window.location.href = 'https://cal.com/reachpavankumar-txgih5'; }}
+            onClick={() => { window.location.href = 'https://www.waytolink.cc/book/pavankumar'; }}
             className="hidden md:block font-medium px-6 py-2 rounded-lg bg-white hover:bg-gray-100 text-black transition-colors duration-200"
           >
             Book Free Consultation
@@ -181,7 +181,7 @@ export default function Header() {
                 Contact
               </button>
               <button
-                onClick={() => { window.location.href = 'https://cal.com/reachpavankumar-txgih5'; }}
+                onClick={() => { window.location.href = 'https://www.waytolink.cc/book/pavankumar'; }}
                 className="font-medium px-6 py-2 rounded-lg bg-white hover:bg-gray-100 text-black transition-colors duration-200 text-left"
               >
                 Book Free Consultation

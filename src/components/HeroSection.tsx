@@ -7,7 +7,7 @@ import { BGPattern } from '@/components/BGPattern';
 
 export default function HeroSection() {
   const scrollToContact = () => {
-    window.location.href = 'https://cal.com/reachpavankumar-txgih5';
+    window.location.href = 'https://www.waytolink.cc/book/pavankumar';
   };
   const goToProjects = () => {
     window.location.href = '/projects';

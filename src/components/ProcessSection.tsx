@@ -32,7 +32,7 @@ const processSteps = [
 
 export default function ProcessSection() {
   const handleStartProject = () => {
-    window.location.href = 'https://cal.com/reachpavankumar-txgih5';
+    window.location.href = 'https://www.waytolink.cc/book/pavankumar';
   };
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-black">

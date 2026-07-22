@@ -25,13 +25,21 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
         className={`
-          flex items-center justify-between px-6 py-3 rounded-full transition-all duration-300
-          ${scrolled ? 'glass-pill bg-white/80 shadow-lg' : 'bg-white/50 backdrop-blur-md border border-white/20'}
+          flex items-center justify-between pl-5 pr-3 py-2.5 rounded-full transition-all duration-300
+          ${scrolled ? 'glass-pill' : 'bg-white/60 backdrop-blur-md border border-white/40'}
           w-full max-w-6xl
         `}
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/assets/project-images/appsetz-new-logo.png"
+            alt="AppSetz"
+            width={32}
+            height={32}
+            className="h-8 w-8 object-contain"
+            priority
+          />
           <Image
             src="/assets/project-images/1000205142.png"
             alt="AppSetz Logo"
@@ -42,23 +50,33 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
-          <Link href="/portfolio" className="hover:text-black transition-colors">Portfolio</Link>
-          <Link href="#testimonials" className="hover:text-black transition-colors">Testimonials</Link>
-          <Link href="#services" className="hover:text-black transition-colors">Services</Link>
-          <Link href="#process" className="hover:text-black transition-colors">Process</Link>
-          <Link href="#contact" className="hover:text-black transition-colors">Contact</Link>
-          <Link href="#why-us" className="hover:text-black transition-colors">Why Us</Link>
-          <Link href="#pricing" className="hover:text-black transition-colors">Pricing</Link>
+        <div className="hidden md:flex items-center gap-1 text-sm font-medium text-gray-600">
+          {[
+            { label: 'Portfolio', href: '/portfolio' },
+            { label: 'Testimonials', href: '#testimonials' },
+            { label: 'Services', href: '#services' },
+            { label: 'Process', href: '#process' },
+            { label: 'Why Us', href: '#why-us' },
+            { label: 'Pricing', href: '#pricing' },
+            { label: 'Contact', href: '#contact' },
+          ].map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="px-3 py-1.5 rounded-full hover:text-brand-700 hover:bg-brand-50 transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
 
         {/* CTA & Hamburger */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <Link
-            href="https://cal.com/appsetz"
+            href="https://www.waytolink.cc/book/pavankumar"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:block bg-black text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
+            className="hidden md:block bg-gray-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-800 hover:-translate-y-0.5 transition-all duration-300"
           >
             Book Free Consultation
           </Link>
@@ -66,7 +84,7 @@ const Navbar = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-black transition-colors"
+            className="md:hidden p-2 text-brand-700 hover:text-brand-900 transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -82,26 +100,37 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 mt-4 mx-4 p-6 bg-white rounded-3xl shadow-2xl border border-gray-100 flex flex-col gap-4 md:hidden z-50 overflow-hidden"
+            className="absolute top-full left-0 right-0 mt-4 mx-4 p-6 bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-brand-100 flex flex-col gap-4 md:hidden z-50 overflow-hidden"
           >
-            <div className="flex flex-col gap-4">
-              <Link href="/portfolio" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-gray-900 px-4 py-2 hover:bg-gray-50 rounded-xl transition-colors">Portfolio</Link>
-              <Link href="#testimonials" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-gray-900 px-4 py-2 hover:bg-gray-50 rounded-xl transition-colors">Testimonials</Link>
-              <Link href="#services" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-gray-900 px-4 py-2 hover:bg-gray-50 rounded-xl transition-colors">Services</Link>
-              <Link href="#process" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-gray-900 px-4 py-2 hover:bg-gray-50 rounded-xl transition-colors">Process</Link>
-              <Link href="#contact" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-gray-900 px-4 py-2 hover:bg-gray-50 rounded-xl transition-colors">Contact</Link>
-              <Link href="#why-us" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-gray-900 px-4 py-2 hover:bg-gray-50 rounded-xl transition-colors">Why Us</Link>
-              <Link href="#pricing" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-gray-900 px-4 py-2 hover:bg-gray-50 rounded-xl transition-colors">Pricing</Link>
+            <div className="flex flex-col gap-1">
+              {[
+                { label: 'Portfolio', href: '/portfolio' },
+                { label: 'Testimonials', href: '#testimonials' },
+                { label: 'Services', href: '#services' },
+                { label: 'Process', href: '#process' },
+                { label: 'Why Us', href: '#why-us' },
+                { label: 'Pricing', href: '#pricing' },
+                { label: 'Contact', href: '#contact' },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-lg font-semibold text-gray-900 px-4 py-2.5 hover:bg-brand-50 hover:text-brand-700 rounded-xl transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
 
-            <hr className="border-gray-100" />
+            <hr className="border-brand-100" />
 
             <Link
-              href="https://cal.com/appsetz"
+              href="https://www.waytolink.cc/book/pavankumar"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
-              className="w-full bg-black text-white text-center py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors"
+              className="w-full bg-gray-900 text-white text-center py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-gray-800 transition-all"
             >
               Book Free Consultation
             </Link>

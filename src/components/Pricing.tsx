@@ -71,7 +71,7 @@ const pricingPlans = [
             'Enterprise-grade solutions'
         ],
         buttonText: 'Book a Call',
-        href: 'https://cal.com/appsetz',
+        href: 'https://www.waytolink.cc/book/pavankumar',
         isPopular: false
     }
 ];

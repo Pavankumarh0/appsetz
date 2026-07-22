@@ -96,7 +96,7 @@ const ContactClean = () => {
                         <div className="pt-10">
                             <p className="text-sm font-medium text-gray-500 mb-4">Interested in a quick chat?</p>
                             <a
-                                href="https://cal.com/appsetz"
+                                href="https://www.waytolink.cc/book/pavankumar"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-transform hover:scale-105"

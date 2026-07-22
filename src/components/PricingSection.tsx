@@ -68,7 +68,7 @@ export default function PricingSection() {
   };
 
   const handleStartProject = () => {
-    window.location.href = 'https://cal.com/reachpavankumar-txgih5';
+    window.location.href = 'https://www.waytolink.cc/book/pavankumar';
   };
 
   return (
