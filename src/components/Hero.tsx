@@ -22,17 +22,17 @@ import {
 const Hero = () => {
   return (
     <section className="relative pt-32 md:pt-44 pb-24 px-6 overflow-hidden bg-[#0b0b0d] text-white">
-      {/* Wildflower meadow photo anchored to the bottom */}
+      {/* Grey wash anchored to the bottom */}
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[62%] bg-cover bg-center"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[62%]"
         style={{
-          backgroundImage: 'url(/images/hero-meadow.jpg)',
-          // fade the top edge of the photo so it dissolves into the black
+          backgroundColor: '#3a3a3f',
+          // fade the top edge so it dissolves into the black
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 32%)',
           maskImage: 'linear-gradient(to bottom, transparent 0%, black 32%)',
         }}
       />
-      {/* Extra black-to-transparent wash over the photo's top for a seamless blend */}
+      {/* Extra black-to-transparent wash over the grey's top for a seamless blend */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[62%] bg-gradient-to-b from-[#0b0b0d] via-transparent to-transparent" />
 
       <div className="relative z-10 w-full max-w-6xl mx-auto text-center">
