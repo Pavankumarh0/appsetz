@@ -1,11 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, ExternalLink, Github, X, CheckCircle2, Code } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ExternalLink, Github, X, CheckCircle2, Code, Star } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import CopyrightFooter from '@/components/CopyrightFooter';
 import { Project } from '@/types';
+import StoreBadges from '@/components/StoreBadges';
 
 export default function PortfolioPage() {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -75,7 +76,7 @@ export default function PortfolioPage() {
                                 transition={{ duration: 0.8, delay: 0.2 }}
                                 className="text-6xl font-bold text-gray-900 mb-6"
                             >
-                                Our <span className="text-blue-600">Projects</span>
+                                Our <span className="text-gradient">Projects</span>
                             </motion.h1>
                             <motion.p
                                 initial={{ opacity: 0, y: 20 }}
@@ -105,8 +106,55 @@ export default function PortfolioPage() {
                                 <p className="text-gray-500">Check back soon for our latest work!</p>
                             </motion.div>
                         ) : (
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {projects.map((project, index) => (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                {projects.map((project, index) => project.featured ? (
+                                    <motion.div
+                                        key={project.id}
+                                        initial={{ opacity: 0, y: 50 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, ease: "easeOut" }}
+                                        onClick={() => setSelectedProject(project)}
+                                        className="group relative md:col-span-2 cursor-pointer overflow-hidden rounded-3xl bg-brand-950 text-white shadow-2xl ring-2 ring-honey-400/60 grid md:grid-cols-2"
+                                    >
+                                        <div className="pointer-events-none absolute -top-32 -left-24 h-96 w-96 rounded-full bg-brand-500/25 blur-[100px]" />
+                                        <div className="relative z-10 p-8 md:p-12 flex flex-col justify-center">
+                                            <div className="flex flex-wrap items-center gap-2 mb-6">
+                                                <span className="inline-flex items-center gap-1.5 rounded-full bg-honey-400 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-brand-950">
+                                                    <Star className="h-3 w-3 fill-current" /> Featured · Production ready
+                                                </span>
+                                                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-300">
+                                                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> Live on App Store &amp; Google Play
+                                                </span>
+                                            </div>
+                                            <div className="flex items-center gap-4 mb-4">
+                                                {project.icon && (
+                                                    // eslint-disable-next-line @next/next/no-img-element
+                                                    <img src={project.icon} alt="" className="h-14 w-14 rounded-2xl ring-1 ring-white/10 shadow-lg" />
+                                                )}
+                                                <h3 className="font-outfit text-4xl md:text-5xl font-extrabold">{project.title}</h3>
+                                            </div>
+                                            {project.tagline && (
+                                                <p className="font-outfit text-xl md:text-2xl font-semibold text-honey-300 mb-4">{project.tagline}</p>
+                                            )}
+                                            <p className="text-white/65 leading-relaxed mb-8 line-clamp-4">{project.description}</p>
+                                            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                                                <StoreBadges appStoreUrl={project.appStoreUrl} playStoreUrl={project.playStoreUrl} tone="light" size="sm" />
+                                                <span className="inline-flex items-center gap-1 text-sm font-semibold text-honey-300 group-hover:text-honey-200">
+                                                    Read the case study <ArrowUpRight className="h-4 w-4" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div className="relative min-h-[18rem]">
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                                            <img
+                                                src={project.images[0]}
+                                                alt={project.title}
+                                                className="absolute inset-0 w-full h-full object-cover object-[75%_50%] transition-transform duration-700 group-hover:scale-105"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-brand-950 via-brand-950/10 to-transparent" />
+                                        </div>
+                                    </motion.div>
+                                ) : (
                                     <motion.div
                                         key={project.id}
                                         initial={{ opacity: 0, y: 50 }}
@@ -157,7 +205,7 @@ export default function PortfolioPage() {
                                             <div className="flex items-center gap-4">
                                                 <button
                                                     onClick={() => setSelectedProject(project)}
-                                                    className="px-3 py-1.5 text-sm rounded-md bg-blue-50 text-blue-600 border border-blue-100 hover:bg-blue-100 font-medium transition-colors"
+                                                    className="px-3 py-1.5 text-sm rounded-md bg-brand-50 text-brand-700 border border-brand-100 hover:bg-brand-100 font-medium transition-colors"
                                                 >
                                                     Case Study
                                                 </button>
@@ -247,13 +295,20 @@ export default function PortfolioPage() {
                                                 </motion.p>
                                                 <div className="flex flex-wrap gap-2 mb-8">
                                                     {(selectedProject.techStack || ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Firebase']).slice(0, 6).map(t => (
-                                                        <span key={t} className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-medium text-xs">{t}</span>
+                                                        <span key={t} className="px-3 py-1 rounded-full bg-brand-100 text-brand-800 font-medium text-xs">{t}</span>
                                                     ))}
                                                 </div>
+                                                {(selectedProject.appStoreUrl || selectedProject.playStoreUrl) && (
+                                                    <StoreBadges
+                                                        appStoreUrl={selectedProject.appStoreUrl}
+                                                        playStoreUrl={selectedProject.playStoreUrl}
+                                                        className="mb-4"
+                                                    />
+                                                )}
                                                 <div className="flex flex-wrap gap-3">
                                                     {selectedProject.liveDemoUrl && (
-                                                        <a href={selectedProject.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-5 py-3 rounded-xl bg-black text-white font-semibold hover:bg-gray-800 transition-colors shadow-lg">
-                                                            <ExternalLink className="w-4 h-4 mr-2" /> View Live App
+                                                        <a href={selectedProject.liveDemoUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-5 py-3 rounded-xl bg-gray-900 text-white font-semibold hover:bg-brand-800 transition-colors shadow-lg">
+                                                            <ExternalLink className="w-4 h-4 mr-2" /> {selectedProject.featured ? 'Visit Website' : 'View Live App'}
                                                         </a>
                                                     )}
                                                     {selectedProject.githubUrl && (
@@ -280,13 +335,13 @@ export default function PortfolioPage() {
                                     <section className="py-12 px-6 sm:px-10 bg-white border-b border-gray-100">
                                         <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-2xl font-bold text-gray-900 mb-8">Impact & Results</motion.h2>
                                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                                            {[
+                                            {(selectedProject.highlights || [
                                                 { value: '90%', label: 'Efficiency Increase', sub: 'compared to manual processes' },
                                                 { value: '50%', label: 'Time Reduction', sub: 'for operational tasks' },
                                                 { value: '30%', label: 'Satisfaction Boost', sub: 'based on user feedback' }
-                                            ].map((r, i) => (
+                                            ]).map((r, i) => (
                                                 <motion.div key={r.label} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.1 }} className="p-5 rounded-xl bg-gray-50 border border-gray-100">
-                                                    <div className="text-4xl font-extrabold text-blue-600 mb-1">{r.value}</div>
+                                                    <div className="text-4xl font-extrabold text-brand-600 mb-1">{r.value}</div>
                                                     <div className="text-gray-900 font-semibold">{r.label}</div>
                                                     <div className="text-xs text-gray-500 mt-1">{r.sub}</div>
                                                 </motion.div>
@@ -303,9 +358,9 @@ export default function PortfolioPage() {
 
                                                 <h4 className="font-semibold text-gray-900 mb-3">Key Features</h4>
                                                 <ul className="space-y-2 mb-6">
-                                                    {['Real-time updates', 'Secure authentication', 'Responsive interface', 'Admin dashboard'].map((f) => (
-                                                        <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
-                                                            <CheckCircle2 className="w-4 h-4 text-green-500" /> {f}
+                                                    {(selectedProject.features || ['Real-time updates', 'Secure authentication', 'Responsive interface', 'Admin dashboard']).map((f) => (
+                                                        <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
+                                                            <CheckCircle2 className="w-4 h-4 mt-0.5 shrink-0 text-brand-500" /> {f}
                                                         </li>
                                                     ))}
                                                 </ul>

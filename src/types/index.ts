@@ -7,6 +7,14 @@ export interface Project {
   images: string[];
   githubUrl?: string;
   liveDemoUrl?: string;
+  // Live, shipped products get the featured treatment across the site
+  featured?: boolean;
+  tagline?: string;
+  icon?: string;
+  appStoreUrl?: string;
+  playStoreUrl?: string;
+  highlights?: { value: string; label: string; sub: string }[];
+  features?: string[];
   isPublished: boolean;
   createdAt: Date;
   updatedAt: Date;

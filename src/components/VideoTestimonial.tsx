@@ -38,7 +38,7 @@ const VideoTestimonial = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-12"
                 >
-                    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-semibold text-blue-700 mb-4">
+                    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-xs font-semibold text-brand-700 mb-4">
                         Client Success Story
                     </span>
                     <h2 className="text-3xl md:text-4xl font-bold text-black tracking-tight font-outfit">
@@ -109,7 +109,7 @@ const VideoTestimonial = () => {
 
                                 {/* Client name tag — bottom */}
                                 <div className="flex items-center gap-2">
-                                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-sm">
+                                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-brand-400 to-brand-700 flex items-center justify-center text-white font-bold text-sm">
                                         Dr
                                     </div>
                                     <div>
@@ -137,7 +137,7 @@ const VideoTestimonial = () => {
                     >
                         {/* Client badge */}
                         <div className="flex items-center gap-3">
-                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
+                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-400 to-brand-700 flex items-center justify-center text-white font-bold text-lg shadow-md">
                                 Dr
                             </div>
                             <div>
@@ -149,7 +149,7 @@ const VideoTestimonial = () => {
                         {/* Headline */}
                         <h3 className="text-2xl md:text-3xl font-bold text-black leading-snug font-outfit">
                             We built{' '}
-                            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-brand-700 to-brand-500 bg-clip-text text-transparent">
                                 Implanto 365
                             </span>
                             , a custom app — just for her clinic.
@@ -172,7 +172,7 @@ const VideoTestimonial = () => {
                                 'Delivered in weeks, not months',
                             ].map((item) => (
                                 <li key={item} className="flex items-start gap-3 text-gray-700 text-sm md:text-base">
-                                    <span className="mt-1 w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center flex-shrink-0">
+                                    <span className="mt-1 w-5 h-5 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0">
                                         <svg className="w-3 h-3" fill="none" viewBox="0 0 12 12">
                                             <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
@@ -183,7 +183,7 @@ const VideoTestimonial = () => {
                         </ul>
 
                         {/* Quote */}
-                        <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-500 text-sm md:text-base">
+                        <blockquote className="border-l-4 border-brand-500 pl-4 italic text-gray-500 text-sm md:text-base">
                             "Appsetz understood exactly what I needed and delivered something beyond my expectations."
                             <br />
                             <span className="not-italic font-semibold text-gray-700 mt-1 block">— Dr. Sirisha Reddy</span>

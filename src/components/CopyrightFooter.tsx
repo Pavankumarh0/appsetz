@@ -6,7 +6,7 @@ import { Twitter, Instagram, Linkedin } from 'lucide-react';
 
 export default function CopyrightFooter() {
   return (
-    <footer className="bg-gray-900 text-white py-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-brand-950 text-white py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export default function CopyrightFooter() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-honey-400 transition-colors duration-200"
                   aria-label="Follow us on Twitter"
                 >
                   <Twitter className="w-6 h-6" />
@@ -48,7 +48,7 @@ export default function CopyrightFooter() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-gray-400 hover:text-pink-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-brand-400 transition-colors duration-200"
                   aria-label="Follow us on Instagram"
                 >
                   <Instagram className="w-6 h-6" />
@@ -60,7 +60,7 @@ export default function CopyrightFooter() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-gray-400 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-400 hover:text-honey-300 transition-colors duration-200"
                   aria-label="Follow us on LinkedIn"
                 >
                   <Linkedin className="w-6 h-6" />

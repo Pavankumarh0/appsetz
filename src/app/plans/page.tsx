@@ -35,16 +35,16 @@ const detailedPlans = [
   {
     id: 'landing-page',
     icon: Rocket,
-    dot: '🟢',
+    dot: '🟡',
     name: 'Landing Page',
     price: '2,999',
     priceNote: '+ domain charges',
     tagline: 'Perfect for lead generation, product launches, or “link in bio” pages.',
-    accentText: 'text-emerald-600',
-    accentBg: 'bg-emerald-50',
-    accentBorder: 'border-emerald-200',
-    check: 'text-emerald-500',
-    glow: 'from-emerald-200/60',
+    accentText: 'text-honey-600',
+    accentBg: 'bg-honey-100/60',
+    accentBorder: 'border-honey-200',
+    check: 'text-honey-600',
+    glow: 'from-honey-200/60',
     features: [
       'Mobile-responsive, fast-loading single page',
       'WhatsApp + contact form integration',
@@ -57,16 +57,16 @@ const detailedPlans = [
   {
     id: 'website',
     icon: Globe,
-    dot: '🔵',
+    dot: '🟠',
     name: 'Website',
     price: '15,000',
     priceNote: 'starting from',
     tagline: 'For businesses that need a proper online presence, now with a full backend.',
-    accentText: 'text-blue-600',
-    accentBg: 'bg-blue-50',
-    accentBorder: 'border-blue-200',
-    check: 'text-blue-500',
-    glow: 'from-blue-200/60',
+    accentText: 'text-brand-600',
+    accentBg: 'bg-brand-50',
+    accentBorder: 'border-brand-200',
+    check: 'text-brand-500',
+    glow: 'from-brand-200/60',
     popular: true,
     features: [
       'Up to 5 pages (Home, About, Services, Gallery, Contact)',
@@ -83,16 +83,16 @@ const detailedPlans = [
   {
     id: 'mobile-app',
     icon: Smartphone,
-    dot: '🟣',
+    dot: '🟤',
     name: 'Mobile App',
     price: '60,000',
     priceNote: 'starting from',
     tagline: 'Custom Android/iOS app for your business.',
-    accentText: 'text-purple-600',
-    accentBg: 'bg-purple-50',
-    accentBorder: 'border-purple-200',
-    check: 'text-purple-500',
-    glow: 'from-purple-200/60',
+    accentText: 'text-brand-800',
+    accentBg: 'bg-brand-100/70',
+    accentBorder: 'border-brand-300',
+    check: 'text-brand-800',
+    glow: 'from-brand-300/50',
     features: [
       'Cross-platform (Android + iOS)',
       'Admin panel to manage content',
@@ -138,8 +138,8 @@ export default function PlansPage() {
       <main className="pt-32 pb-24">
         {/* Hero */}
         <section className="relative overflow-hidden px-6">
-          <div className="pointer-events-none absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-blue-100/50 blur-3xl" />
-          <div className="pointer-events-none absolute top-10 right-1/4 h-72 w-72 rounded-full bg-purple-100/50 blur-3xl" />
+          <div className="pointer-events-none absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-honey-200/40 blur-3xl" />
+          <div className="pointer-events-none absolute top-10 right-1/4 h-72 w-72 rounded-full bg-brand-100/60 blur-3xl" />
 
           <div className="relative z-10 mx-auto max-w-4xl text-center">
             <motion.div initial="hidden" animate="show" variants={fadeUp}>
@@ -281,7 +281,7 @@ export default function PlansPage() {
             variants={fadeUp}
             className="mb-12 text-center"
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-xs font-semibold text-blue-700">
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700">
               <LayoutDashboard className="h-3.5 w-3.5" />
               Included with Website
             </span>
@@ -327,10 +327,10 @@ export default function PlansPage() {
             whileInView="show"
             viewport={{ once: true }}
             variants={fadeUp}
-            className="relative overflow-hidden rounded-3xl bg-[#0b0b0d] px-8 py-14 text-center text-white md:px-16"
+            className="relative overflow-hidden rounded-3xl bg-brand-950 px-8 py-14 text-center text-white md:px-16"
           >
-            <div className="pointer-events-none absolute -left-16 top-0 h-56 w-56 rounded-full bg-blue-500/20 blur-3xl" />
-            <div className="pointer-events-none absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-purple-500/20 blur-3xl" />
+            <div className="pointer-events-none absolute -left-16 top-0 h-56 w-56 rounded-full bg-brand-500/25 blur-3xl" />
+            <div className="pointer-events-none absolute -right-16 bottom-0 h-56 w-56 rounded-full bg-honey-400/15 blur-3xl" />
             <div className="relative z-10">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold text-white/80">
                 <Clock className="h-3.5 w-3.5" />

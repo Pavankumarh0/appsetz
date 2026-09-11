@@ -8,15 +8,15 @@ export const plans = [
   {
     id: 'landing-page',
     icon: Rocket,
-    dot: '🟢',
+    dot: '🟡',
     name: 'Landing Page',
     price: '2,999',
     priceNote: '+ domain charges',
     tagline: 'Perfect for lead generation, product launches, or “link in bio” pages.',
-    check: 'text-emerald-500',
-    ring: 'hover:border-emerald-400/60 hover:shadow-emerald-100',
-    chip: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-    iconWrap: 'bg-emerald-50 text-emerald-600',
+    check: 'text-honey-600',
+    ring: 'hover:border-honey-400/70 hover:shadow-honey-100',
+    chip: 'bg-honey-100/60 text-brand-800 border-honey-200',
+    iconWrap: 'bg-honey-100 text-honey-600',
     highlights: [
       'Mobile-responsive, fast-loading single page',
       'WhatsApp + contact form integration',
@@ -29,15 +29,15 @@ export const plans = [
   {
     id: 'website',
     icon: Globe,
-    dot: '🔵',
+    dot: '🟠',
     name: 'Website',
     price: '15,000',
     priceNote: 'starting from',
     tagline: 'For businesses that need a proper online presence, now with a full backend.',
-    check: 'text-blue-500',
-    ring: 'hover:border-blue-400/60 hover:shadow-blue-100',
-    chip: 'bg-blue-50 text-blue-700 border-blue-200',
-    iconWrap: 'bg-blue-50 text-blue-600',
+    check: 'text-brand-500',
+    ring: 'hover:border-brand-400/60 hover:shadow-brand-100',
+    chip: 'bg-brand-50 text-brand-700 border-brand-200',
+    iconWrap: 'bg-brand-50 text-brand-600',
     popular: true,
     highlights: [
       'Up to 5 pages + backend & database',
@@ -51,15 +51,15 @@ export const plans = [
   {
     id: 'mobile-app',
     icon: Smartphone,
-    dot: '🟣',
+    dot: '🟤',
     name: 'Mobile App',
     price: '60,000',
     priceNote: 'starting from',
     tagline: 'Custom Android/iOS app for your business.',
-    check: 'text-purple-500',
-    ring: 'hover:border-purple-400/60 hover:shadow-purple-100',
-    chip: 'bg-purple-50 text-purple-700 border-purple-200',
-    iconWrap: 'bg-purple-50 text-purple-600',
+    check: 'text-brand-800',
+    ring: 'hover:border-brand-700/50 hover:shadow-brand-200',
+    chip: 'bg-brand-100/70 text-brand-900 border-brand-300',
+    iconWrap: 'bg-brand-100 text-brand-800',
     highlights: [
       'Cross-platform (Android + iOS)',
       'Admin panel to manage content',
@@ -91,9 +91,9 @@ const PlansSection = () => {
   return (
     <section id="plans" className="relative py-24 px-6 overflow-hidden bg-white">
       {/* soft background blobs */}
-      <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-blue-100/50 blur-3xl" />
-      <div className="pointer-events-none absolute top-1/3 -right-24 h-72 w-72 rounded-full bg-purple-100/50 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-emerald-100/40 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-honey-200/40 blur-3xl" />
+      <div className="pointer-events-none absolute top-1/3 -right-24 h-72 w-72 rounded-full bg-brand-100/60 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-brand-200/30 blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Heading */}

@@ -1,10 +1,23 @@
-import type { Metadata } from 'next';
-import { Inter, Outfit } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
+import { Inter, Outfit, Silkscreen } from 'next/font/google';
 import './globals.css';
+import { NOCOM_LINKS } from '@/lib/featured';
+
+export const viewport: Viewport = {
+  themeColor: '#1c120c',
+};
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+});
+
+// Blocky pixel face for the voxel beaver's sign
+const pixel = Silkscreen({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-pixel',
   display: 'swap',
 });
 
@@ -16,7 +29,8 @@ const outfit = Outfit({
 });
 
 const siteUrl = 'https://www.appsetz.pro';
-const logoPath = '/assets/WhatsApp Image 2025-11-10 at 01.54.27_b1b811b6.jpg';
+const logoPath = '/brand/icon-512.png';
+const ogImagePath = '/brand/og-image.jpg';
 
 export const metadata: Metadata = {
   title: {
@@ -67,10 +81,10 @@ export const metadata: Metadata = {
     description: 'Full-stack digital product agency helping startups build modern, scalable websites, mobile apps, and SaaS products. We design and develop custom solutions tailored to your business goals.',
     images: [
       {
-        url: logoPath,
+        url: ogImagePath,
         width: 1200,
         height: 630,
-        alt: 'Appsetz — Digital Product Agency Logo',
+        alt: 'Appsetz beaver mascot — Digital Product Agency',
       },
     ],
   },
@@ -78,7 +92,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Appsetz — Web & App Development Agency',
     description: 'Transforming startup ideas into powerful digital products. Expert web development, mobile apps, UI/UX design, and SaaS solutions.',
-    images: [logoPath],
+    images: [ogImagePath],
     creator: '@appsetz',
   },
   robots: {
@@ -94,12 +108,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: logoPath, sizes: '32x32', type: 'image/jpeg' },
-      { url: logoPath, sizes: '16x16', type: 'image/jpeg' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/brand/icon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/brand/icon-192.png', sizes: '192x192', type: 'image/png' },
     ],
-    shortcut: logoPath,
+    shortcut: '/favicon.ico',
     apple: [
-      { url: logoPath, sizes: '180x180', type: 'image/jpeg' },
+      { url: '/brand/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   manifest: '/manifest.json',
@@ -117,7 +132,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
+    <html lang="en" className={`${inter.variable} ${outfit.variable} ${pixel.variable}`}>
       <head>
         {/* Structured Data for SEO */}
         <script
@@ -173,6 +188,24 @@ export default function RootLayout({
                 target: `${siteUrl}/search?q={search_term_string}`,
                 'query-input': 'required name=search_term_string',
               },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'MobileApplication',
+              name: 'NoCom',
+              description: 'Broker-free marketplace for used cars and bikes in India with Aadhaar-verified owners and zero commission.',
+              url: NOCOM_LINKS.website,
+              operatingSystem: 'iOS, Android',
+              applicationCategory: 'ShoppingApplication',
+              installUrl: [NOCOM_LINKS.appStore, NOCOM_LINKS.playStore],
+              sameAs: [NOCOM_LINKS.appStore, NOCOM_LINKS.playStore],
+              offers: { '@type': 'Offer', price: '0', priceCurrency: 'INR' },
+              creator: { '@type': 'Organization', name: 'Appsetz', url: siteUrl },
             }),
           }}
         />

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import FeaturedApp from '@/components/FeaturedApp';
 import PlansSection from '@/components/PlansSection';
 import CurvedLoop from '@/components/CurvedLoop';
 import Portfolio from '@/components/Portfolio';
@@ -31,6 +32,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <FeaturedApp />
         <PlansSection />
         <VideoTestimonial />
         <CurvedLoop

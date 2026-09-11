@@ -34,17 +34,17 @@ const ContactClean = () => {
                 console.error('Email notification error:', emailError);
             }
 
-            // Blue success alert as requested
+            // Brand (beaver) success alert
             toast.success("We'll get back to you within one day", {
                 style: {
-                    background: '#1d4ed8', // blue-700
+                    background: '#bb5c27', // brand-600
                     color: '#fff',
                     padding: '16px',
                     borderRadius: '8px',
                 },
                 iconTheme: {
                     primary: '#fff',
-                    secondary: '#1d4ed8',
+                    secondary: '#bb5c27',
                 },
             });
 

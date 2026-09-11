@@ -103,7 +103,7 @@ export default function ProjectsPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-6xl font-bold text-white mb-6"
               >
-                Our <span className="text-blue-400">Projects</span>
+                Our <span className="text-honey-400">Projects</span>
               </motion.h1>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -185,7 +185,7 @@ export default function ProjectsPage() {
                       <div className="flex items-center gap-4">
                         <button
                           onClick={() => setSelectedProject(project)}
-                          className="px-3 py-1.5 text-sm rounded-md bg-blue-50 text-blue-600 border border-blue-100 hover:bg-blue-100"
+                          className="px-3 py-1.5 text-sm rounded-md bg-brand-50 text-brand-700 border border-brand-100 hover:bg-brand-100"
                         >
                           Case Study
                         </button>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import HeroBeaver, { VoxelField } from '@/components/HeroBeaver';
 import { useEffect, useState } from 'react';
 import {
   TrendingUp,
@@ -21,35 +22,46 @@ import {
 
 const Hero = () => {
   return (
-    <section className="relative pt-32 md:pt-44 pb-24 px-6 overflow-hidden bg-[#0b0b0d] text-white">
-      {/* Grey wash anchored to the bottom */}
+    <section className="relative pt-32 md:pt-44 lg:pt-64 pb-24 px-6 overflow-hidden bg-brand-950 text-white">
+      {/* Warm bark wash anchored to the bottom */}
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[62%]"
         style={{
-          backgroundColor: '#3a3a3f',
-          // fade the top edge so it dissolves into the black
+          backgroundColor: '#3e2419',
+          // fade the top edge so it dissolves into the espresso
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 32%)',
           maskImage: 'linear-gradient(to bottom, transparent 0%, black 32%)',
         }}
       />
-      {/* Extra black-to-transparent wash over the grey's top for a seamless blend */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[62%] bg-gradient-to-b from-[#0b0b0d] via-transparent to-transparent" />
+      {/* Extra espresso-to-transparent wash over the bark's top for a seamless blend */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[62%] bg-gradient-to-b from-brand-950 via-transparent to-transparent" />
+      {/* Fur-orange glow behind the headline */}
+      <div className="pointer-events-none absolute left-1/2 top-24 z-0 h-[26rem] w-[40rem] max-w-full -translate-x-1/2 rounded-full bg-brand-500/20 blur-[120px]" />
+      <VoxelField />
 
       <div className="relative z-10 w-full max-w-6xl mx-auto text-center">
-        {/* Badge */}
+        {/* Announcement — flagship app is live */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur border border-white/10 text-xs font-semibold text-white/80">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
+          <Link
+            href="#featured"
+            className="group inline-flex items-center gap-2 pl-1.5 pr-4 py-1.5 rounded-full bg-white/5 backdrop-blur border border-honey-400/30 text-xs font-semibold text-white/85 hover:bg-white/10 hover:border-honey-400/60 transition-colors"
+          >
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-honey-400 px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-brand-950">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-950 opacity-50" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-950" />
+              </span>
+              Live
             </span>
-            For Startups &amp; SMEs
-          </span>
+            <span className="sm:hidden">NoCom is live on both stores</span>
+            <span className="hidden sm:inline">NoCom is now on the App Store &amp; Google Play</span>
+            <span className="text-honey-300 transition-transform group-hover:translate-x-0.5">→</span>
+          </Link>
         </motion.div>
 
         {/* Heading — placeholder copy, swap with your final quote */}
@@ -57,10 +69,16 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.05] font-outfit"
+          className="relative mt-32 sm:mt-36 md:mt-32 lg:mt-0 text-4xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.05] font-outfit [--bw:80px] sm:[--bw:112px] lg:[--bw:150px]"
         >
-          One team for your web &amp; app. <br className="hidden md:block" />
-          <span className="text-white/70">Shipped in weeks, not months.</span>
+          One team for your web &amp;{' '}
+          {/* The beaver sits on "app." on lg+; below that it perches on the heading's top-right */}
+          <span className="lg:relative lg:inline-block">
+            app.
+            <HeroBeaver className="bottom-[calc(100%-0.3em)] right-[4%] lg:right-auto lg:left-1/2 lg:-translate-x-[62%]" />
+          </span>{' '}
+          <br className="hidden md:block" />
+          <span className="text-gradient-honey">Shipped in weeks, not months.</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -84,7 +102,7 @@ const Hero = () => {
             href="https://www.waytolink.cc/book/pavankumar"
             target="_blank"
             rel="noopener noreferrer"
-            className="group px-5 py-3 sm:px-8 sm:py-4 rounded-full bg-white text-gray-900 font-semibold transition-all shadow-lg hover:bg-white/90 hover:-translate-y-0.5 flex items-center gap-2 text-sm sm:text-lg whitespace-nowrap"
+            className="group px-5 py-3 sm:px-8 sm:py-4 rounded-full bg-honey-400 text-brand-950 font-bold transition-all shadow-glow-honey hover:bg-honey-300 hover:-translate-y-0.5 flex items-center gap-2 text-sm sm:text-lg whitespace-nowrap"
           >
             Get a quote
             <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -114,10 +132,10 @@ const HeroMockup = () => {
       className="relative mt-16 sm:mt-24 w-full max-w-4xl mx-auto"
     >
       {/* Glow platform under devices */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-white/10 opacity-40 blur-3xl rounded-full" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-brand-500/30 opacity-50 blur-3xl rounded-full" />
 
       {/* Browser window — the website */}
-      <div className="relative mx-auto w-full max-w-3xl rounded-2xl border border-white/10 bg-[#111113]/80 backdrop-blur-xl shadow-2xl overflow-hidden">
+      <div className="relative mx-auto w-full max-w-3xl rounded-2xl border border-white/10 bg-[#22160f]/80 backdrop-blur-xl shadow-2xl overflow-hidden">
         {/* Top bar */}
         <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/[0.03]">
           <span className="w-3 h-3 rounded-full bg-white/25" />
@@ -192,10 +210,10 @@ const HeroMockup = () => {
         transition={{ duration: 0.8, delay: 0.7 }}
         className="absolute -bottom-10 right-2 sm:right-6 w-28 sm:w-40 z-20"
       >
-        <div className="rounded-[1.75rem] border-[5px] border-[#17171a] bg-[#0c0c0e] shadow-2xl overflow-hidden">
+        <div className="rounded-[1.75rem] border-[5px] border-[#2a1d15] bg-[#160e0a] shadow-2xl overflow-hidden">
           {/* notch + app header */}
           <div className="relative">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#17171a] rounded-b-xl z-10" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#2a1d15] rounded-b-xl z-10" />
             <div className="bg-white/[0.06] px-3 pt-5 pb-3">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
@@ -210,7 +228,7 @@ const HeroMockup = () => {
           </div>
 
           {/* app body */}
-          <div className="p-2.5 space-y-2.5 bg-[#0c0c0e]">
+          <div className="p-2.5 space-y-2.5 bg-[#160e0a]">
             {/* built-with badge */}
             <motion.div
               className="flex items-center justify-center gap-1"
@@ -262,7 +280,7 @@ const HeroMockup = () => {
           </div>
 
           {/* tab bar */}
-          <div className="flex items-center justify-around px-3 py-2 border-t border-white/5 bg-[#0c0c0e]">
+          <div className="flex items-center justify-around px-3 py-2 border-t border-white/5 bg-[#160e0a]">
             {[Home, Search, Plus, User].map((Icon, i) => (
               <Icon key={i} className={`w-3.5 h-3.5 ${i === 0 ? 'text-white' : 'text-white/30'}`} />
             ))}

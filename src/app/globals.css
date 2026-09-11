@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 11, 7, 19;
+  --foreground-rgb: 31, 24, 20;
   --background-rgb: 255, 255, 255;
-  --brand-indigo: 99, 102, 241;
-  --brand-violet: 139, 92, 246;
-  --brand-pink: 236, 72, 153;
+  /* Beaver mascot palette (see tailwind.config.js brand/honey) */
+  --brand-fur: 220, 118, 53;
+  --brand-bark: 145, 65, 24;
+  --brand-honey: 253, 191, 115;
 }
 
 body {
@@ -18,14 +19,14 @@ body {
 }
 
 ::selection {
-  background: rgba(var(--brand-violet), 0.22);
-  color: #2e1065;
+  background: rgba(var(--brand-fur), 0.25);
+  color: #3e2419;
 }
 
 /* ---- Reusable brand utilities ---- */
 @layer utilities {
   .text-gradient {
-    background-image: linear-gradient(135deg, #6366f1 0%, #8b5cf6 45%, #ec4899 100%);
+    background-image: linear-gradient(135deg, #914118 0%, #dc7635 50%, #f4a340 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -33,7 +34,18 @@ body {
   }
 
   .text-gradient-animated {
-    background-image: linear-gradient(120deg, #6366f1, #8b5cf6, #ec4899, #8b5cf6, #6366f1);
+    background-image: linear-gradient(120deg, #914118, #dc7635, #f4a340, #dc7635, #914118);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradientText 8s ease infinite;
+  }
+
+  /* Warm gradient for text sitting on dark (espresso) backgrounds */
+  .text-gradient-honey {
+    background-image: linear-gradient(120deg, #fdca93, #fdbf73, #e8924f, #fdbf73, #fdca93);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -53,9 +65,26 @@ body {
   }
 
   .bg-grid {
-    background-image: linear-gradient(rgba(124, 58, 237, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(124, 58, 237, 0.06) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(187, 92, 39, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(187, 92, 39, 0.07) 1px, transparent 1px);
     background-size: 44px 44px;
+  }
+
+  /* Voxel grid — nods to the blocky beaver mascot */
+  .bg-voxel {
+    background-image: linear-gradient(rgba(253, 191, 115, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(253, 191, 115, 0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+}
+
+/* Wood-chip voxels drifting up behind the hero (see HeroBeaver.tsx) */
+@keyframes voxelRise {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-120vh) rotate(540deg);
   }
 }
 
@@ -64,15 +93,15 @@ body {
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(187, 92, 39, 0.12);
 }
 
 .glass-pill {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(124, 58, 237, 0.12);
-  box-shadow: 0 8px 30px -12px rgba(76, 29, 149, 0.25);
+  border: 1px solid rgba(187, 92, 39, 0.14);
+  box-shadow: 0 8px 30px -12px rgba(105, 51, 28, 0.28);
 }
 
 /* Gradient ring border helper (for cards) */
@@ -87,30 +116,30 @@ body {
   inset: 0;
   border-radius: inherit;
   padding: 1.5px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+  background: linear-gradient(135deg, #914118, #dc7635, #fdbf73);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
 }
 
-/* Custom scrollbar — brand tinted */
+/* Custom scrollbar — beaver tinted */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f3ff;
+  background: #fdf6ee;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#8b5cf6, #ec4899);
+  background: linear-gradient(#dc7635, #914118);
   border-radius: 9999px;
-  border: 2px solid #f5f3ff;
+  border: 2px solid #fdf6ee;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(#7c3aed, #db2777);
+  background: linear-gradient(#bb5c27, #69331c);
 }
 
 /* Smooth scrolling */
