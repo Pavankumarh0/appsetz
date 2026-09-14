@@ -99,7 +99,7 @@ const Hero = () => {
           className="flex flex-row items-center justify-center gap-3 sm:gap-4 px-4 sm:px-0"
         >
           <Link
-            href="https://www.waytolink.cc/book/pavankumar"
+            href="https://cal.com/appsetz-agency"
             target="_blank"
             rel="noopener noreferrer"
             className="group px-5 py-3 sm:px-8 sm:py-4 rounded-full bg-honey-400 text-brand-950 font-bold transition-all shadow-glow-honey hover:bg-honey-300 hover:-translate-y-0.5 flex items-center gap-2 text-sm sm:text-lg whitespace-nowrap"
